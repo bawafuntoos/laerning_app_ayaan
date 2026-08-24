@@ -15,6 +15,11 @@ SUBJECTS = {
         ("Which is a source of light?", ["Moon", "Mirror", "Sun", "Book"], "Sun", "The Sun makes its own light."),
         ("What do we breathe in to stay alive?", ["Oxygen", "Water", "Sand", "Smoke"], "Oxygen", "Our lungs take oxygen from the air."),
     ]},
+    "English": {"emoji": "📚", "colour": "#3F8EFC", "tag": "Word Wizard", "lessons": [
+        ("Which word is a naming word (noun)?", ["Jump", "Happy", "Elephant", "Quickly"], "Elephant", "A noun names a person, place, animal, or thing."),
+        ("Choose the correct word: I ___ to school every day.", ["go", "goes", "going", "gone"], "go", "With ‘I’, we say ‘I go’."),
+        ("Which word rhymes with ‘cat’?", ["Dog", "Hat", "Sun", "Tree"], "Hat", "Cat and hat end with the same sound: ‘at’."),
+    ]},
     "Hindi": {"emoji": "अ", "colour": "#FF7043", "tag": "शब्द सितारा", "lessons": [
         ("‘पानी’ का सही English word क्या है?", ["Fire", "Water", "Wind", "Food"], "Water", "पानी = Water."),
         ("‘बड़ा’ का विलोम शब्द चुनो।", ["लंबा", "छोटा", "मोटा", "सुंदर"], "छोटा", "बड़ा का विलोम छोटा है।"),
@@ -29,6 +34,11 @@ SUBJECTS = {
         ("Mumbai is in which state?", ["Gujarat", "Maharashtra", "Goa", "Kerala"], "Maharashtra", "Mumbai is the capital city of Maharashtra."),
         ("Which place is a famous Mumbai landmark?", ["Gateway of India", "Taj Mahal", "Red Fort", "Charminar"], "Gateway of India", "The Gateway of India stands near the Mumbai harbour."),
         ("Why do we need rules in school?", ["To stay safe and learn well", "To make more noise", "To skip class", "To lose things"], "To stay safe and learn well", "Rules help everyone feel safe, fair, and ready to learn."),
+    ]},
+    "Logical Reasoning": {"emoji": "🧩", "colour": "#5C6BC0", "tag": "Brain Detective", "lessons": [
+        ("What comes next? 2, 4, 6, 8, ___", ["9", "10", "12", "16"], "10", "The numbers increase by 2 each time."),
+        ("Find the odd one out.", ["Circle", "Square", "Triangle", "Apple"], "Apple", "The first three are shapes; an apple is a fruit."),
+        ("If today is Monday, what day comes after Wednesday?", ["Tuesday", "Thursday", "Friday", "Sunday"], "Thursday", "The days go Monday, Tuesday, Wednesday, Thursday."),
     ]},
 }
 
@@ -110,7 +120,7 @@ if st.session_state.view == "Home":
                 subject_card(name, data)
     with right:
         st.markdown("### My explorer badge")
-        st.metric("Missions complete", f"{done_count} / 15")
+        st.metric("Missions complete", f"{done_count} / 21")
         if done_count >= 9:
             badge = "🏆 Learning Legend"
         elif done_count >= 3:
