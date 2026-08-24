@@ -101,6 +101,13 @@ st.markdown("""
     .card-emoji {font-size:2.6rem;} .progress {height:8px; background:#edf0f5; border-radius:8px; overflow:hidden; width:100%;}.progress span {display:block; height:100%; border-radius:8px;}
     .hero {color:#fff; padding:26px 32px; border-radius:24px; display:flex; gap:20px; align-items:center; margin-bottom:20px;} .hero span {font-size:4rem;} .hero h1 {margin:0;} .hero p {margin:4px 0 0;}
     .tip {background:#e6f6ff; border-radius:16px; padding:16px 20px; border-left:5px solid #22a7f0;}
+    /* High-contrast controls make the app easy to use on phones and dark browser themes. */
+    div.stButton > button, button[kind="secondary"] {background:#6D4AFF !important; color:#FFFFFF !important; border:0 !important; border-radius:12px !important; font-weight:750 !important; min-height:44px !important;}
+    div.stButton > button:hover, button[kind="secondary"]:hover {background:#5134CE !important; color:#FFFFFF !important; border:0 !important;}
+    div.stButton > button * {color:#FFFFFF !important;}
+    [data-baseweb="radio"] label {background:#FFFFFF !important; color:#182230 !important; border:2px solid #D0D5DD !important; border-radius:10px !important; padding:9px 12px !important; margin:4px !important;}
+    [data-baseweb="radio"] label *, [data-baseweb="radio"] label div {color:#182230 !important;}
+    [data-baseweb="radio"] label:has(input:checked) {border-color:#6D4AFF !important; background:#F0ECFF !important;}
 </style>""", unsafe_allow_html=True)
 
 done_count = len(st.session_state.done)
