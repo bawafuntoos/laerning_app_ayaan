@@ -70,7 +70,8 @@ def mission_page(subject, data):
         key = f"{subject}-{index}"
         with st.container(border=True):
             status = "⭐ Completed" if key in st.session_state.done else f"Mission {index + 1}"
-            st.markdown(f"**{status}**  \\n+### {question}")
+            st.markdown(f"**{status}**")
+            st.markdown(f"### {question}")
             choice = st.radio("Pick your answer", options, key=f"pick-{key}", index=None, horizontal=True, label_visibility="collapsed")
             if st.button("Check my answer", key=f"check-{key}"):
                 if choice is None:
