@@ -72,7 +72,13 @@ def mission_page(subject, data):
             status = "⭐ Completed" if key in st.session_state.done else f"Mission {index + 1}"
             st.markdown(f"**{status}**")
             st.markdown(f"### {question}")
-            choice = st.radio("Pick your answer", options, key=f"pick-{key}", index=None, horizontal=True, label_visibility="collapsed")
+            choice = st.selectbox(
+                "Choose your answer",
+                options,
+                key=f"pick-{key}",
+                index=None,
+                placeholder="Tap to choose an answer…",
+            )
             if st.button("Check my answer", key=f"check-{key}"):
                 if choice is None:
                     st.warning("Pick an answer first, explorer!")
@@ -109,6 +115,9 @@ st.markdown("""
     [data-baseweb="radio"] label {background:#FFFFFF !important; color:#182230 !important; border:2px solid #D0D5DD !important; border-radius:10px !important; padding:9px 12px !important; margin:4px !important;}
     [data-baseweb="radio"] label *, [data-baseweb="radio"] label div {color:#182230 !important;}
     [data-baseweb="radio"] label:has(input:checked) {border-color:#6D4AFF !important; background:#F0ECFF !important;}
+    div[data-testid="stSelectbox"] label, div[data-testid="stSelectbox"] label * {color:#182230 !important; font-weight:700 !important;}
+    div[data-baseweb="select"] > div {background:#FFFFFF !important; color:#182230 !important; border:2px solid #B8C1D1 !important; border-radius:10px !important; min-height:44px;}
+    div[data-baseweb="select"] * {color:#182230 !important;}
 </style>""", unsafe_allow_html=True)
 
 done_count = len(st.session_state.done)
